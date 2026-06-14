@@ -45,8 +45,6 @@ body::before{
     z-index:-1;
 }
 
-/* NAVBAR */
-
 .navbar{
     width:90%;
     max-width:1100px;
@@ -91,8 +89,6 @@ body::before{
     color:white;
 }
 
-/* HERO */
-
 .hero{
     max-width:1200px;
     margin:auto;
@@ -106,16 +102,6 @@ body::before{
 
 .hero-left{
     flex:1;
-}
-
-.hero-badge{
-    display:inline-block;
-    padding:10px 20px;
-    border:1px solid #111;
-    border-radius:999px;
-    margin-bottom:25px;
-    color:#d9d9d9;
-    background:#0a0a0a;
 }
 
 .hero-title{
@@ -166,6 +152,19 @@ body::before{
     color:#888;
 }
 
+.hero-badge{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid #111;
+    border-radius:999px;
+    color:#d9d9d9;
+    background:#0a0a0a;
+}
+
+.bottom-badge{
+    margin-top:35px;
+}
+
 .hero-right{
     flex:1;
     display:flex;
@@ -179,8 +178,6 @@ body::before{
     border:1px solid #111;
 }
 
-/* SEPARATOR */
-
 .section-divider{
     width:85%;
     height:1px;
@@ -192,8 +189,6 @@ body::before{
         transparent
     );
 }
-
-/* PRICING */
 
 .pricing{
     padding:100px 20px;
@@ -231,10 +226,23 @@ body::before{
     margin-bottom:20px;
 }
 
-.price{
-    font-size:52px;
+.price-wrap{
+    display:flex;
+    align-items:flex-end;
+    gap:8px;
+    margin-bottom:8px;
+}
+
+.big-price{
+    font-size:64px;
     font-weight:800;
-    margin-bottom:5px;
+    line-height:1;
+}
+
+.small-price{
+    font-size:22px;
+    color:#888;
+    margin-bottom:10px;
 }
 
 .period{
@@ -264,8 +272,6 @@ body::before{
     font-weight:600;
 }
 
-/* FOOTER */
-
 .footer{
     margin-top:60px;
     text-align:center;
@@ -273,8 +279,6 @@ body::before{
     color:#666;
     border-top:1px solid #111;
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -320,10 +324,6 @@ body::before{
 
     <div class="hero-left">
 
-        <div class="hero-badge">
-            Undetected • Constantly Updated
-        </div>
-
         <div class="hero-title">
             Surpass your<br>
             <span>limits NOW!</span>
@@ -351,6 +351,10 @@ body::before{
             </div>
         </div>
 
+        <div class="hero-badge bottom-badge">
+            Undetected • Constantly Updated
+        </div>
+
     </div>
 
     <div class="hero-right">
@@ -368,8 +372,13 @@ body::before{
     <div class="cards">
 
         <div class="card">
-            <h3>$5 Monthly</h3>
-            <div class="price">KOERU</div>
+            <h3>KOERU</h3>
+
+            <div class="price-wrap">
+                <span class="big-price">$5</span>
+                <span class="small-price">/month</span>
+            </div>
+
             <div class="period">Full Access Subscription</div>
 
             <ul class="features">
