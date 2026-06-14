@@ -1,429 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>KOERU</title>
+<title>KOERU</title>
 
-  <!-- TAB ICON -->
-  <link rel="icon" type="image/png" href="/images/Koeru2.png">
+<link rel="icon" type="image/png" href="/images/Koeru2.png">
 
-  <!-- DISCORD EMBED -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="KOERU">
-  <meta property="og:description" content="Surpass your limits NOW!">
-  <meta property="og:url" content="https://koeruontop.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KOERU">
+<meta property="og:description" content="Surpass your limits NOW!">
+<meta property="og:url" content="https://koeruontop.vercel.app/">
+<meta property="og:image" content="https://koeruontop.vercel.app/images/Koeru3.png">
 
-  <!-- IMPORTANT -->
-  <meta property="og:image" content="https://koeruontop.vercel.app/images/Koeru3.png">
+<meta name="theme-color" content="#d9d9d9">
 
-  <meta name="theme-color" content="#d9d9d9">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="KOERU">
-  <meta name="twitter:description" content="Surpass your limits NOW!">
+<style>
 
-  <!-- IMPORTANT -->
-  <meta name="twitter:image" content="https://koeruontop.vercel.app/images/Koeru3.png">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+body{
+    background:#000;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
 
-  <style>
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05), transparent 35%);
+    z-index:-1;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+.navbar{
+    width:90%;
+    max-width:1100px;
+    margin:20px auto;
+    background:#0a0a0a;
+    border:1px solid #111;
+    border-radius:20px;
+    padding:14px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-      text-align: center;
-    }
+.logo img{
+    width:34px;
+    height:34px;
+}
 
-    /* TOP BAR */
+.logo span{
+    font-weight:700;
+    font-size:18px;
+}
 
-    .topbar {
-      width: 100%;
-      background: #111;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #1a1a1a;
-    }
+.nav-links{
+    display:flex;
+    gap:30px;
+}
 
-    .top-left {
-      display: flex;
-      align-items: center;
-    }
+.nav-links a{
+    color:#bdbdbd;
+    text-decoration:none;
+    transition:0.2s;
+}
 
-    .top-left img {
-      width: 28px;
-      height: 28px;
-      margin-right: 10px;
-    }
+.nav-links a:hover{
+    color:white;
+}
 
-    .top-left span {
-      font-weight: 600;
-      font-size: 18px;
-      color: #fff;
-      text-shadow:
-        0 0 10px rgba(255,255,255,0.9),
-        0 0 20px rgba(255,255,255,0.6);
-    }
+.hero{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+}
 
-    .top-buttons {
-      display: flex;
-      gap: 12px;
-      margin-right: 35px;
-    }
+.hero-left{
+    flex:1;
+}
 
-    .top-buttons a {
-      text-decoration: none;
-    }
+.hero-badge{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid #111;
+    border-radius:999px;
+    margin-bottom:25px;
+    color:#d9d9d9;
+    background:#0a0a0a;
+}
 
-    .top-buttons button {
-      background: #000;
-      border: 1px solid #222;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 14px;
-    }
+.hero-title{
+    font-size:78px;
+    font-weight:800;
+    line-height:1;
+    text-shadow:0 0 15px rgba(255,255,255,0.55);
+}
 
-    .top-buttons button:hover {
-      background: #0f0f0f;
-      transform: translateY(-2px);
-      box-shadow: 0 0 10px rgba(255,255,255,0.08);
-    }
+.hero-title span{
+    color:#d9d9d9;
+}
 
-    /* MAIN */
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+}
 
-    .logo {
-      width: 220px;
-      margin-bottom: 20px;
-      transition: transform 0.25s ease;
-    }
+.hero-buttons a{
+    text-decoration:none;
+}
 
-    .logo:hover {
-      transform: scale(1.05);
-    }
+.main-btn{
+    background:#d9d9d9;
+    color:black;
+    padding:16px 35px;
+    border-radius:14px;
+    font-weight:600;
+}
 
-    h1 {
-      font-size: 52px;
-      font-weight: 700;
-      color: #fff;
-      text-shadow:
-        0 0 10px rgba(255,255,255,0.9),
-        0 0 20px rgba(255,255,255,0.6);
-    }
+.secondary-btn{
+    color:white;
+    padding:16px 30px;
+}
 
-    .desc {
-      margin-top: 10px;
-      color: #fff;
-      opacity: 0.95;
-      margin-bottom: 22px;
-      font-size: 20px;
-      text-shadow:
-        0 0 10px rgba(255,255,255,0.9),
-        0 0 20px rgba(255,255,255,0.7);
-    }
+.stats{
+    margin-top:60px;
+    display:flex;
+    gap:45px;
+}
 
-    /* BUTTONS */
+.stat h2{
+    font-size:34px;
+}
 
-    .buttons {
-      margin-bottom: 45px;
-    }
+.stat p{
+    color:#888;
+}
 
-    .buttons a {
-      text-decoration: none;
-    }
+.hero-right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
 
-    .buttons button {
-      background: #000;
-      border: 1px solid #333;
-      color: #fff;
-      padding: 15px 34px;
-      margin: 6px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: all 0.25s ease;
-    }
+.hero-right img{
+    width:100%;
+    max-width:500px;
+}
 
-    .buttons button:hover {
-      background: #111;
-      transform: translateY(-3px) scale(1.03);
-      border-color: #555;
-      box-shadow: 0 0 12px rgba(255,255,255,0.08);
-    }
+.pricing{
+    padding:100px 20px;
+    max-width:900px;
+    margin:auto;
+}
 
-    /* SECTION */
+.pricing-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+}
 
-    .section-title {
-      margin-bottom: 22px;
-      margin-top: 15px;
-      font-size: 20px;
-      color: #fff;
-      font-weight: 600;
-    }
+.cards{
+    display:flex;
+    justify-content:center;
+}
 
-    .games {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+.card{
+    width:400px;
+    background:#0a0a0a;
+    border:1px solid #111;
+    border-radius:22px;
+    padding:35px;
+    transition:0.25s;
+}
 
-    /* GAME CARD */
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#222;
+}
 
-    .game-card {
-      background: #050505;
-      border: 1px solid #111;
-      border-radius: 14px;
-      overflow: hidden;
-      width: 340px;
-      color: #fff;
-      transition: all 0.25s ease;
-    }
+.card h3{
+    font-size:34px;
+    margin-bottom:20px;
+}
 
-    .game-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      border-color: #1d1d1d;
-      box-shadow: 0 0 20px rgba(255,255,255,0.04);
-    }
+.price{
+    font-size:52px;
+    font-weight:800;
+    margin-bottom:5px;
+}
 
-    .game-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.25s ease;
-    }
+.period{
+    color:#888;
+    margin-bottom:25px;
+}
 
-    .game-card:hover img {
-      transform: scale(1.05);
-    }
+.features{
+    list-style:none;
+    margin-bottom:35px;
+}
 
-    .game-info {
-      padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 15px;
-    }
+.features li{
+    margin-bottom:14px;
+    color:#d0d0d0;
+}
 
-    /* BADGES */
+.buy-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:#d9d9d9;
+    color:black;
+    padding:15px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+}
 
-    .badge {
-      background: #22c55e;
-      color: #000;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      box-shadow: 0 0 10px rgba(34,197,94,0.5);
-    }
+.footer{
+    margin-top:60px;
+    text-align:center;
+    padding:30px;
+    color:#666;
+    border-top:1px solid #111;
+}
 
-    .indev {
-      background: #facc15;
-      color: #000;
-      box-shadow: 0 0 10px rgba(250,204,21,0.5);
-    }
+@media(max-width:768px){
 
-    /* FOOTER */
+.hero-title{
+    font-size:52px;
+}
 
-    .footer {
-      margin-top: 60px;
-      padding: 20px;
-      text-align: center;
-      color: #777;
-      font-size: 14px;
-      border-top: 1px solid #111;
-    }
+.nav-links{
+    gap:15px;
+    font-size:14px;
+}
 
-    /* MOBILE */
+.stats{
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-    @media (max-width: 768px) {
+.card{
+    width:100%;
+}
 
-      .top-buttons {
-        gap: 8px !important;
-        margin-right: 10px !important;
-      }
+}
 
-      .top-buttons button {
-        padding: 7px 12px !important;
-        font-size: 12px !important;
-        border-radius: 8px !important;
-      }
-
-      h1 {
-        font-size: 40px;
-      }
-
-      .desc {
-        font-size: 17px;
-      }
-
-      .logo {
-        width: 180px;
-      }
-
-      .buttons button {
-        width: 90%;
-        max-width: 300px;
-      }
-
-      .game-card {
-        width: 100%;
-      }
-
-    }
-
-  </style>
+</style>
 </head>
-
 <body>
 
-  <!-- TOPBAR -->
-
-  <div class="topbar">
-
-    <div class="top-left">
-      <img src="/images/Koeru2.png">
-      <span>KOERU</span>
+<div class="navbar">
+    <div class="logo">
+        <img src="/images/Koeru2.png">
+        <span>KOERU</span>
     </div>
 
-    <div class="top-buttons">
-
-      <a href="https://koeruontop.vercel.app/">
-        <button>Home</button>
-      </a>
-
-      <a href="terms.html">
-        <button>Terms</button>
-      </a>
-
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#pricing">Pricing</a>
+        <a href="terms.html">Terms</a>
+        <a href="https://discord.gg/DyrCsxGrHZ">Discord</a>
     </div>
+</div>
 
-  </div>
+<section class="hero">
 
-  <!-- MAIN -->
+    <div class="hero-left">
 
-  <div class="container">
-
-    <img class="logo" src="/images/Koeru3.png" alt="KOERU">
-
-    <h1>KOERU</h1>
-
-    <div class="desc">
-      Surpass your limits NOW!
-    </div>
-
-    <!-- MAIN BUTTONS -->
-
-    <div class="buttons">
-
-      <a href="https://koeru.sellhub.cx/" target="_blank">
-        <button>Purchase</button>
-      </a>
-
-      <a href="https://discord.gg/DyrCsxGrHZ" target="_blank">
-        <button>Discord</button>
-      </a>
-
-    </div>
-
-    <!-- ROBLOX -->
-
-    <div class="section-title">
-      Supported Roblox Games
-    </div>
-
-    <div class="games">
-
-      <a href="https://www.roblox.com/games/6678877691/ZO-SAMURAI-SWORD-FIGHTING"
-         target="_blank"
-         style="text-decoration:none; color:inherit;">
-
-        <div class="game-card">
-
-          <img src="https://tr.rbxcdn.com/180DAY-b7d86235327561d4ee4e51b727d91f48/768/432/Image/Webp/noFilter">
-
-          <div class="game-info">
-            <span>ZO SAMURAI SWORD FIGHTING</span>
-            <span class="badge">UNDETECTED</span>
-          </div>
-
+        <div class="hero-badge">
+            Undetected • Constantly Updated
         </div>
 
-      </a>
-
-      <a href="https://www.roblox.com/games/12625784503/Saber-Showdown"
-         target="_blank"
-         style="text-decoration:none; color:inherit;">
-
-        <div class="game-card">
-
-          <img src="https://tr.rbxcdn.com/180DAY-daa578c397a15ee59dadb8ee76d4235f/768/432/Image/Webp/noFilter">
-
-          <div class="game-info">
-            <span>Saber Showdown</span>
-            <span class="badge indev">Indev</span>
-          </div>
-
+        <div class="hero-title">
+            Surpass your<br>
+            <span>limits NOW!</span>
         </div>
 
-      </a>
-
-    </div>
-
-    <!-- VALORANT -->
-
-    <div class="section-title" style="margin-top:55px;">
-      Colorbot/Triggerbot Supported Games
-    </div>
-
-    <div class="games">
-
-      <a href="https://playvalorant.com/"
-         target="_blank"
-         style="text-decoration:none; color:inherit;">
-
-        <div class="game-card">
-
-          <img src="https://xboxwire.thesourcemediaassets.com/sites/2/2024/08/Val-Console-Launch-Hero-1080-__-GAME-STORES-80b474d3ff38615edd0a-1900x1080.jpg">
-
-          <div class="game-info">
-            <span>Valorant</span>
-            <span class="badge indev">Indev</span>
-          </div>
-
+        <div class="hero-buttons">
+            <a href="#pricing" class="main-btn">Purchase</a>
+            <a href="https://discord.gg/DyrCsxGrHZ" class="secondary-btn">Join Discord →</a>
         </div>
 
-      </a>
+        <div class="stats">
+            <div class="stat">
+                <h2>100%</h2>
+                <p>Undetected</p>
+            </div>
+
+            <div class="stat">
+                <h2>24/7</h2>
+                <p>Support</p>
+            </div>
+
+            <div class="stat">
+                <h2>Fast</h2>
+                <p>Updates</p>
+            </div>
+        </div>
 
     </div>
 
-  </div>
+    <div class="hero-right">
+        <img src="/images/Koeru3.png">
+    </div>
 
-  <!-- FOOTER -->
+</section>
 
-  <div class="footer">
+<section class="pricing" id="pricing">
+
+    <h1 class="pricing-title">Pricing</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>$5 Monthly</h3>
+            <div class="price">KOERU</div>
+            <div class="period">Full Access Subscription</div>
+
+            <ul class="features">
+                <li>✓ Undetected</li>
+                <li>✓ Fast Updates</li>
+                <li>✓ Supports ZO Samurai</li>
+                <li>✓ Supports Saber Showdown</li>
+                <li>✓ Priority Support</li>
+                <li>✓ More Games Coming Soon</li>
+            </ul>
+
+            <a href="https://koeru.sellhub.cx/" class="buy-btn">Purchase</a>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="footer">
     © 2026 KOERU. All rights reserved.
-  </div>
+</div>
 
 </body>
 </html>
