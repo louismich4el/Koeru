@@ -1,351 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>KOERU - Terms & Conditions</title>
+<title>KOERU - Terms</title>
 
-  <!-- TAB ICON -->
-  <link rel="icon" type="image/png" href="/images/Koeru2.png">
+<link rel="icon" type="image/png" href="/images/Koeru2.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-    body {
-      background: #000;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
-    }
+body{
+    background:#000;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 25px;
-    }
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05), transparent 35%);
+    z-index:-1;
+}
 
-    /* TOP BAR */
+/* NAVBAR */
 
-    .topbar {
-      width: 100%;
-      background: #111;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #1a1a1a;
-    }
+.navbar{
+    width:90%;
+    max-width:1100px;
+    margin:20px auto;
+    background:#0a0a0a;
+    border:1px solid #111;
+    border-radius:20px;
+    padding:14px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-    .top-left {
-      display: flex;
-      align-items: center;
-    }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
-    .top-left img {
-      width: 28px;
-      height: 28px;
-      margin-right: 10px;
-    }
+.logo img{
+    width:34px;
+    height:34px;
+}
 
-    .top-left span {
-      font-weight: 600;
-      font-size: 18px;
-      color: #fff;
-      text-shadow:
-        0 0 10px rgba(255,255,255,0.9),
-        0 0 20px rgba(255,255,255,0.6);
-    }
+.logo span{
+    font-weight:700;
+    font-size:18px;
+}
 
-    .top-buttons {
-      display: flex;
-      gap: 12px;
-      margin-right: 35px;
-    }
+.nav-links{
+    display:flex;
+    gap:30px;
+}
 
-    .top-buttons a {
-      text-decoration: none;
-    }
+.nav-links a{
+    color:#bdbdbd;
+    text-decoration:none;
+    transition:0.2s;
+}
 
-    .top-buttons button {
-      background: #000;
-      border: 1px solid #222;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 14px;
-    }
+.nav-links a:hover{
+    color:white;
+}
 
-    .top-buttons button:hover {
-      background: #0f0f0f;
-      transform: translateY(-2px);
-      box-shadow: 0 0 10px rgba(255,255,255,0.08);
-    }
+/* MAIN */
 
-    /* MAIN */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:80px 20px;
+}
 
-    .logo-wrapper {
-      text-align: center;
-      margin-bottom: 25px;
-    }
+.hero{
+    text-align:center;
+    margin-bottom:50px;
+}
 
-    .logo-wrapper img {
-      width: 260px;
-      max-width: 90%;
-      transition: transform 0.25s ease;
-    }
+.hero img{
+    width:220px;
+    margin-bottom:25px;
+}
 
-    .logo-wrapper img:hover {
-      transform: scale(1.04);
-    }
+.hero h1{
+    font-size:60px;
+    font-weight:800;
+    text-shadow:0 0 15px rgba(255,255,255,0.55);
+}
 
-    h1 {
-      font-size: 42px;
-      text-align: center;
-      margin-bottom: 10px;
-      text-shadow:
-        0 0 12px rgba(255,255,255,0.8),
-        0 0 22px rgba(255,255,255,0.45);
-    }
+.hero p{
+    margin-top:10px;
+    color:#888;
+    font-size:18px;
+}
 
-    .desc {
-      text-align: center;
-      color: #bbb;
-      margin-bottom: 50px;
-      font-size: 18px;
-    }
+/* CARD */
 
-    /* CARD */
+.terms-card{
+    background:#0a0a0a;
+    border:1px solid #111;
+    border-radius:24px;
+    padding:40px;
+}
 
-    .card {
-      background: #050505;
-      border: 1px solid #151515;
-      border-radius: 20px;
-      padding: 35px;
-      line-height: 1.9;
-      box-shadow: 0 0 20px rgba(255,255,255,0.03);
-    }
+.section{
+    margin-bottom:35px;
+}
 
-    h2 {
-      margin-top: 35px;
-      color: #fff;
-      font-size: 28px;
-    }
+.section h2{
+    font-size:28px;
+    margin-bottom:18px;
+}
 
-    ul {
-      padding-left: 22px;
-    }
+.section ul{
+    list-style:none;
+}
 
-    li {
-      margin-bottom: 14px;
-      color: #d0d0d0;
-      font-size: 17px;
-    }
+.section li{
+    margin-bottom:14px;
+    color:#d0d0d0;
+}
 
-    p {
-      color: #d0d0d0;
-      font-size: 17px;
-    }
+.section p{
+    color:#d0d0d0;
+    line-height:1.8;
+}
 
-    .divider {
-      margin: 35px 0;
-      border-top: 1px solid #151515;
-    }
+.divider{
+    height:1px;
+    background:#111;
+    margin:30px 0;
+}
 
-    /* BUTTON */
+.footer{
+    margin-top:60px;
+    text-align:center;
+    padding:30px;
+    color:#666;
+    border-top:1px solid #111;
+}
 
-    .home-btn {
-      display: inline-block;
-      margin-top: 30px;
-      background: #0d0d0d;
-      border: 1px solid #222;
-      padding: 14px 26px;
-      border-radius: 14px;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-      font-size: 16px;
-    }
+/* MOBILE */
 
-    .home-btn:hover {
-      box-shadow: 0 0 15px rgba(255,255,255,0.12);
-      transform: translateY(-2px);
-    }
+@media(max-width:768px){
 
-    /* FOOTER */
+.hero h1{
+    font-size:42px;
+}
 
-    .footer {
-      text-align: center;
-      margin-top: 50px;
-      color: #666;
-      font-size: 14px;
-      border-top: 1px solid #111;
-      padding-top: 20px;
-    }
+.nav-links{
+    gap:15px;
+    font-size:14px;
+}
 
-    /* MOBILE */
+.terms-card{
+    padding:25px;
+}
 
-    @media (max-width: 768px) {
+}
 
-      .top-buttons {
-        gap: 8px !important;
-        margin-right: 10px !important;
-      }
-
-      .top-buttons button {
-        padding: 7px 12px !important;
-        font-size: 12px !important;
-        border-radius: 8px !important;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .card {
-        padding: 25px;
-      }
-
-      h2 {
-        font-size: 24px;
-      }
-
-      .logo-wrapper img {
-        width: 210px;
-      }
-
-    }
-
-  </style>
+</style>
 </head>
-
 <body>
 
-  <!-- TOPBAR -->
-
-  <div class="topbar">
-
-    <div class="top-left">
-      <img src="/images/Koeru2.png">
-      <span>KOERU</span>
+<div class="navbar">
+    <div class="logo">
+        <img src="/images/Koeru2.png">
+        <span>KOERU</span>
     </div>
 
-    <div class="top-buttons">
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="terms.html">Terms</a>
+        <a href="https://discord.gg/DyrCsxGrHZ">Discord</a>
+    </div>
+</div>
 
-      <a href="https://koeruontop.vercel.app/">
-        <button>Home</button>
-      </a>
+<div class="container">
 
-      <a href="terms.html">
-        <button>Terms</button>
-      </a>
-
+    <div class="hero">
+        <img src="/images/Koeru3.png">
+        <h1>Terms & Conditions</h1>
+        <p>By using KOERU products, you agree to the following rules.</p>
     </div>
 
-  </div>
+    <div class="terms-card">
 
-  <!-- MAIN -->
+        <div class="section">
+            <h2>Usage Rules</h2>
+            <ul>
+                <li>✓ Sharing or leaking keys is strictly prohibited.</li>
+                <li>✓ Shared keys may be revoked permanently.</li>
+                <li>✓ Reselling is prohibited unless officially verified by KOERU.</li>
+                <li>✓ Claiming KOERU products as your own is prohibited.</li>
+                <li>✓ Reverse engineering, deobfuscation, or dumping is prohibited.</li>
+                <li>✓ Environment loggers or bypass attempts are prohibited.</li>
+            </ul>
+        </div>
 
-  <div class="container">
+        <div class="divider"></div>
 
-    <div class="logo-wrapper">
-      <img src="/images/Koeru3.png" alt="KOERU Logo">
-    </div>
+        <div class="section">
+            <h2>Refund Policy</h2>
+            <p>
+                All purchases are final. KOERU does not provide refunds,
+                chargebacks, or payment reversals under any circumstances.
+            </p>
+        </div>
 
-    <h1>KOERU Terms & Conditions</h1>
+        <div class="divider"></div>
 
-    <div class="desc">
-      By using KOERU products or services, you agree to the following rules and conditions.
-    </div>
+        <div class="section">
+            <h2>Copyright</h2>
+            <p>
+                All KOERU products, scripts, designs, branding, and systems
+                are protected under copyright law.
+            </p>
+        </div>
 
-    <div class="card">
+        <div class="divider"></div>
 
-      <h2>1. Usage Rules</h2>
-
-      <ul>
-
-        <li>
-          Users may not share, leak, or distribute purchased keys or protected files.
-        </li>
-
-        <li>
-          Sharing, leaking, or redistributing keys may result in immediate key revocation and permanent blacklist from KOERU services.
-        </li>
-
-        <li>
-          Users may not resell KOERU products unless officially verified by KOERU.
-        </li>
-
-        <li>
-          Claiming KOERU products, scripts, branding, or systems as your own is strictly prohibited.
-        </li>
-
-        <li>
-          Reverse engineering, deobfuscation, dumping, or tampering with KOERU systems is not allowed.
-        </li>
-
-        <li>
-          Use of environment loggers, debugging tools, or bypass methods against KOERU products is prohibited.
-        </li>
-
-        <li>
-          Unauthorized redistribution or resale may result in blacklist or permanent access removal.
-        </li>
-
-      </ul>
-
-      <div class="divider"></div>
-
-      <h2>2. Copyright</h2>
-
-      <p>
-        All KOERU content, scripts, designs, branding, systems, and related assets are protected under copyright law.
-      </p>
-
-      <div class="divider"></div>
-
-      <h2>3. Liability</h2>
-
-      <p>
-        KOERU products are provided "as is" without warranty of any kind.
-      </p>
-
-      <p>
-        KOERU is not responsible for misuse or damages caused by third-party actions.
-      </p>
-
-      <div class="divider"></div>
-
-      <h2>4. Refund Policy</h2>
-
-      <p>
-        All payments made to KOERU are final and non-refundable.
-      </p>
-
-      <p>
-        By purchasing any KOERU product or service, you acknowledge and agree that refunds, chargebacks, or payment disputes are not accepted under any circumstances unless explicitly stated otherwise by KOERU.
-      </p>
-
-      <a class="home-btn" href="https://koeruontop.vercel.app/">
-        RETURN HOME
-      </a>
+        <div class="section">
+            <h2>Liability</h2>
+            <p>
+                KOERU products are provided as-is. We are not responsible
+                for misuse, damages, bans, or third-party actions.
+            </p>
+        </div>
 
     </div>
 
-    <div class="footer">
-      © 2026 KOERU. All rights reserved.
-    </div>
+</div>
 
-  </div>
+<div class="footer">
+    © 2026 KOERU. All rights reserved.
+</div>
 
 </body>
 </html>
