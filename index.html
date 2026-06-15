@@ -17,7 +17,7 @@
 <meta property="og:image:height" content="512">
 
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#d9d9d9">
+<meta name="theme-color" content="#ffffff">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -100,11 +100,12 @@ body::after{
 .nav-links a{
     color:#bdbdbd;
     text-decoration:none;
-    transition:0.2s;
+    transition:0.2s ease;
 }
 
 .nav-links a:hover{
     color:white;
+    transform:translateY(-2px);
 }
 
 .hero{
@@ -143,17 +144,29 @@ body::after{
 }
 
 .main-btn{
-    background:#d9d9d9;
+    background:#ffffff;
     color:black;
     padding:16px 35px;
     border-radius:14px;
     font-weight:600;
-    transition:0.25s;
+    transition:0.25s ease;
+}
+
+.main-btn:hover{
+    background:#f5f5f5;
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 0 20px rgba(255,255,255,0.18);
 }
 
 .secondary-btn{
     color:white;
     padding:16px 30px;
+    transition:0.25s ease;
+}
+
+.secondary-btn:hover{
+    transform:translateY(-2px);
+    opacity:0.85;
 }
 
 .stats{
@@ -231,6 +244,15 @@ body::after{
     border:1px solid #1a1a1a;
     border-radius:22px;
     padding:35px;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#2c2c2c;
+    box-shadow:
+    0 0 25px rgba(255,255,255,0.05),
+    0 0 50px rgba(255,255,255,0.02);
 }
 
 .card h3{
@@ -274,12 +296,19 @@ body::after{
     display:block;
     width:100%;
     text-align:center;
-    background:#d9d9d9;
+    background:#ffffff;
     color:black;
     padding:15px;
     border-radius:14px;
     text-decoration:none;
     font-weight:600;
+    transition:0.25s ease;
+}
+
+.buy-btn:hover{
+    background:#f5f5f5;
+    transform:translateY(-3px);
+    box-shadow:0 0 18px rgba(255,255,255,0.16);
 }
 
 .footer{
