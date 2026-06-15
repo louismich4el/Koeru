@@ -12,8 +12,11 @@
 <meta property="og:title" content="KOERU">
 <meta property="og:description" content="Surpass your limits NOW!">
 <meta property="og:url" content="https://koeruontop.vercel.app/">
-<meta property="og:image" content="https://koeruontop.vercel.app/images/Koeru3.png">
+<meta property="og:image" content="https://koeruontop.vercel.app/images/KoeruUI.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#d9d9d9">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,20 +45,36 @@ body::before{
     radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
     radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06), transparent 30%),
     radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05), transparent 35%);
+    z-index:-2;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent 40%);
+    animation:pulse 6s infinite ease-in-out;
     z-index:-1;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.15);}
 }
 
 .navbar{
     width:90%;
     max-width:1100px;
     margin:20px auto;
-    background:#0a0a0a;
+    background:rgba(10,10,10,0.85);
     border:1px solid #111;
     border-radius:20px;
     padding:14px 30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    backdrop-filter:blur(12px);
 }
 
 .logo{
@@ -90,7 +109,7 @@ body::before{
 }
 
 .hero{
-    max-width:1300px;
+    max-width:1400px;
     margin:auto;
     padding:80px 20px;
     display:flex;
@@ -109,7 +128,9 @@ body::before{
     font-weight:800;
     line-height:1.15;
     letter-spacing:-1px;
-    text-shadow:0 0 15px rgba(255,255,255,0.55);
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.7),
+    0 0 40px rgba(255,255,255,0.2);
 }
 
 .hero-title span{
@@ -132,6 +153,11 @@ body::before{
     padding:16px 35px;
     border-radius:14px;
     font-weight:600;
+    transition:0.25s;
+}
+
+.main-btn:hover{
+    transform:translateY(-2px);
 }
 
 .secondary-btn{
@@ -159,7 +185,8 @@ body::before{
     border:1px solid #111;
     border-radius:999px;
     color:#d9d9d9;
-    background:#0a0a0a;
+    background:rgba(10,10,10,0.85);
+    backdrop-filter:blur(8px);
 }
 
 .bottom-badge{
@@ -174,9 +201,10 @@ body::before{
 
 .hero-right img{
     width:100%;
-    max-width:760px;
+    max-width:900px;
     border-radius:20px;
     border:1px solid #111;
+    box-shadow:0 0 30px rgba(255,255,255,0.04);
 }
 
 .section-divider{
@@ -210,16 +238,21 @@ body::before{
 
 .card{
     width:400px;
-    background:#0a0a0a;
-    border:1px solid #111;
+    background:rgba(10,10,10,0.9);
+    border:1px solid #1a1a1a;
     border-radius:22px;
     padding:35px;
     transition:0.25s;
+    backdrop-filter:blur(14px);
+    box-shadow:0 0 25px rgba(255,255,255,0.03);
 }
 
 .card:hover{
     transform:translateY(-8px);
-    border-color:#222;
+    border-color:#333;
+    box-shadow:
+    0 0 25px rgba(255,255,255,0.08),
+    0 0 45px rgba(255,255,255,0.03);
 }
 
 .card h3{
@@ -283,27 +316,103 @@ body::before{
 
 @media(max-width:768px){
 
-.hero-title{
-    font-size:52px;
-    line-height:1.2;
+.navbar{
+    width:95%;
+    padding:12px 18px;
+}
+
+.logo img{
+    width:28px;
+    height:28px;
+}
+
+.logo span{
+    font-size:15px;
 }
 
 .nav-links{
-    gap:15px;
-    font-size:14px;
+    gap:12px;
+    font-size:12px;
+}
+
+.hero{
+    padding:40px 18px;
+    gap:30px;
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-title{
+    font-size:42px;
+    line-height:1.25;
+    letter-spacing:0;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    width:100%;
+    gap:14px;
+}
+
+.main-btn,
+.secondary-btn{
+    width:100%;
+    text-align:center;
+    padding:14px;
 }
 
 .stats{
-    gap:20px;
-    flex-wrap:wrap;
+    margin-top:35px;
+    justify-content:center;
+    gap:25px;
+}
+
+.stat h2{
+    font-size:26px;
+}
+
+.stat p{
+    font-size:13px;
+}
+
+.hero-badge{
+    font-size:13px;
+    padding:8px 16px;
+}
+
+.hero-right img{
+    width:100%;
+    max-width:100%;
+}
+
+.pricing{
+    padding:70px 18px;
+}
+
+.pricing-title{
+    font-size:32px;
 }
 
 .card{
     width:100%;
+    padding:25px;
 }
 
-.hero-right img{
-    max-width:100%;
+.card h3{
+    font-size:28px;
+}
+
+.big-price{
+    font-size:52px;
+}
+
+.small-price{
+    font-size:18px;
+}
+
+.footer{
+    font-size:13px;
+    padding:20px;
 }
 
 }
