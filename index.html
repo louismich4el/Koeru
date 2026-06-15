@@ -22,7 +22,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -42,9 +41,9 @@ body::before{
     position:fixed;
     inset:0;
     background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06), transparent 30%),
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05), transparent 35%);
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.03), transparent 35%);
     z-index:-2;
 }
 
@@ -53,28 +52,28 @@ body::after{
     position:fixed;
     inset:0;
     background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent 40%);
+    radial-gradient(circle at center, rgba(255,255,255,0.02), transparent 40%);
     animation:pulse 6s infinite ease-in-out;
     z-index:-1;
 }
 
 @keyframes pulse{
     0%,100%{transform:scale(1);}
-    50%{transform:scale(1.15);}
+    50%{transform:scale(1.08);}
 }
 
 .navbar{
     width:90%;
     max-width:1100px;
     margin:20px auto;
-    background:rgba(10,10,10,0.85);
+    background:rgba(10,10,10,0.88);
     border:1px solid #111;
     border-radius:20px;
     padding:14px 30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(14px);
 }
 
 .logo{
@@ -126,15 +125,11 @@ body::after{
 .hero-title{
     font-size:78px;
     font-weight:800;
-    line-height:1.15;
+    line-height:1.2;
     letter-spacing:-1px;
     text-shadow:
-    0 0 20px rgba(255,255,255,0.7),
-    0 0 40px rgba(255,255,255,0.2);
-}
-
-.hero-title span{
-    color:#d9d9d9;
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.15);
 }
 
 .hero-buttons{
@@ -154,10 +149,6 @@ body::after{
     border-radius:14px;
     font-weight:600;
     transition:0.25s;
-}
-
-.main-btn:hover{
-    transform:translateY(-2px);
 }
 
 .secondary-btn{
@@ -180,37 +171,35 @@ body::after{
 }
 
 .hero-badge{
+    margin-top:35px;
     display:inline-block;
     padding:10px 20px;
     border:1px solid #111;
     border-radius:999px;
     color:#d9d9d9;
     background:rgba(10,10,10,0.85);
-    backdrop-filter:blur(8px);
-}
-
-.bottom-badge{
-    margin-top:35px;
 }
 
 .hero-right{
     flex:1;
     display:flex;
     justify-content:center;
+    align-items:center;
 }
 
 .hero-right img{
-    width:100%;
-    max-width:900px;
+    width:115%;
+    max-width:1100px;
+    object-fit:contain;
+    transform:scale(1.15);
     border-radius:20px;
-    border:1px solid #111;
-    box-shadow:0 0 30px rgba(255,255,255,0.04);
+    filter:drop-shadow(0 0 20px rgba(255,255,255,0.06));
 }
 
 .section-divider{
     width:85%;
     height:1px;
-    margin:40px auto 20px auto;
+    margin:40px auto;
     background:linear-gradient(
         90deg,
         transparent,
@@ -242,17 +231,6 @@ body::after{
     border:1px solid #1a1a1a;
     border-radius:22px;
     padding:35px;
-    transition:0.25s;
-    backdrop-filter:blur(14px);
-    box-shadow:0 0 25px rgba(255,255,255,0.03);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:#333;
-    box-shadow:
-    0 0 25px rgba(255,255,255,0.08),
-    0 0 45px rgba(255,255,255,0.03);
 }
 
 .card h3{
@@ -264,13 +242,11 @@ body::after{
     display:flex;
     align-items:flex-end;
     gap:8px;
-    margin-bottom:8px;
 }
 
 .big-price{
     font-size:64px;
     font-weight:800;
-    line-height:1;
 }
 
 .small-price{
@@ -345,7 +321,6 @@ body::after{
 .hero-title{
     font-size:42px;
     line-height:1.25;
-    letter-spacing:0;
 }
 
 .hero-buttons{
@@ -358,48 +333,21 @@ body::after{
 .secondary-btn{
     width:100%;
     text-align:center;
-    padding:14px;
 }
 
 .stats{
-    margin-top:35px;
     justify-content:center;
     gap:25px;
 }
 
-.stat h2{
-    font-size:26px;
-}
-
-.stat p{
-    font-size:13px;
-}
-
-.hero-badge{
-    font-size:13px;
-    padding:8px 16px;
-}
-
 .hero-right img{
-    width:100%;
-    max-width:100%;
-}
-
-.pricing{
-    padding:70px 18px;
-}
-
-.pricing-title{
-    font-size:32px;
+    width:110%;
+    max-width:110%;
+    transform:scale(1.05);
 }
 
 .card{
     width:100%;
-    padding:25px;
-}
-
-.card h3{
-    font-size:28px;
 }
 
 .big-price{
@@ -410,13 +358,7 @@ body::after{
     font-size:18px;
 }
 
-.footer{
-    font-size:13px;
-    padding:20px;
 }
-
-}
-
 </style>
 </head>
 <body>
@@ -441,7 +383,7 @@ body::after{
 
         <div class="hero-title">
             Surpass your<br>
-            <span>limits NOW!</span>
+            limits NOW!
         </div>
 
         <div class="hero-buttons">
@@ -466,14 +408,14 @@ body::after{
             </div>
         </div>
 
-        <div class="hero-badge bottom-badge">
+        <div class="hero-badge">
             Undetected • Constantly Updated
         </div>
 
     </div>
 
     <div class="hero-right">
-        <img src="/images/KoeruUI.png" alt="KOERU UI Preview">
+        <img src="/images/KoeruUI.png" alt="KOERU UI">
     </div>
 
 </section>
@@ -485,8 +427,8 @@ body::after{
     <h1 class="pricing-title">Pricing</h1>
 
     <div class="cards">
-
         <div class="card">
+
             <h3>KOERU</h3>
 
             <div class="price-wrap">
@@ -499,15 +441,15 @@ body::after{
             <ul class="features">
                 <li>✓ Undetected</li>
                 <li>✓ Fast Updates</li>
-                <li>✓ Supports ZO Samurai</li>
-                <li>✓ Supports Saber Showdown</li>
+                <li>✓ ZO Samurai Support</li>
+                <li>✓ Saber Showdown Support</li>
                 <li>✓ Priority Support</li>
-                <li>✓ More Games Coming Soon</li>
+                <li>✓ More Games Supporting Soon</li>
             </ul>
 
             <a href="https://koeru.sellhub.cx/" class="buy-btn">Purchase</a>
-        </div>
 
+        </div>
     </div>
 
 </section>
