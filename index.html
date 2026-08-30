@@ -203,7 +203,7 @@ background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
 
 .pricing{
 padding:100px 20px;
-max-width:900px;
+max-width:1200px;
 margin:auto;
 }
 
@@ -213,20 +213,77 @@ font-size:42px;
 margin-bottom:45px;
 }
 
+.pricing-sub{
+text-align:center;
+color:#888;
+margin-top:-30px;
+margin-bottom:50px;
+}
+
+.pricing-grid{
+display:flex;
+justify-content:center;
+align-items:stretch;
+gap:28px;
+flex-wrap:wrap;
+}
+
 .card{
-width:400px;
-margin:auto;
+position:relative;
+width:360px;
 padding:35px;
 border-radius:22px;
 background:rgba(10,10,10,.9);
 border:1px solid #1a1a1a;
 transition:.3s;
+display:flex;
+flex-direction:column;
 }
 
 .card:hover{
 transform:translateY(-8px);
 border-color:#2a2a2a;
 box-shadow:0 0 25px rgba(255,255,255,.05);
+}
+
+.card.featured{
+border-color:rgba(255,255,255,.35);
+box-shadow:0 0 30px rgba(255,255,255,.08);
+transform:scale(1.03);
+}
+
+.card.featured:hover{
+transform:scale(1.03) translateY(-8px);
+}
+
+.best-value-badge{
+position:absolute;
+top:-14px;
+left:50%;
+transform:translateX(-50%);
+background:#fff;
+color:#000;
+font-size:12px;
+font-weight:700;
+letter-spacing:.5px;
+padding:6px 16px;
+border-radius:999px;
+white-space:nowrap;
+}
+
+.bonus-tag{
+display:inline-block;
+margin-top:4px;
+font-size:19px;
+color:#9fdc9f;
+font-weight:700;
+line-height:1.3;
+}
+
+.features{
+list-style:none;
+margin-bottom:35px;
+flex-grow:1;
 }
 
 .card h3{
@@ -321,6 +378,19 @@ width:120%;
 .card{
 width:100%;
 }
+
+.card.featured{
+transform:none;
+order:-1;
+}
+
+.card.featured:hover{
+transform:translateY(-8px);
+}
+
+.pricing-grid{
+gap:22px;
+}
 }
 </style>
 </head>
@@ -349,7 +419,7 @@ limits NOW!
 </div>
 
 <div class="hero-buttons">
-<a href="#pricing" class="main-btn">Purchase</a>
+<a href="https://koeru.sellhub.cx/product/Koeru/" class="main-btn">Purchase</a>
 <a href="https://discord.gg/DyrCsxGrHZ" class="secondary-btn">Join Discord →</a>
 </div>
 
@@ -373,9 +443,12 @@ Undetected • Constantly Updated
 
 <section class="pricing" id="pricing">
 <h1>Pricing</h1>
+<p class="pricing-sub">Choose the plan that fits you best</p>
+
+<div class="pricing-grid">
 
 <div class="card">
-<h3>KOERU</h3>
+<h3>1 Month</h3>
 
 <div class="price-wrap">
 <span class="big-price">$6</span>
@@ -385,15 +458,61 @@ Undetected • Constantly Updated
 <div class="period">Full Access Subscription</div>
 
 <ul class="features">
-<li>✓ Undetected</li>
-<li>✓ Fast Updates</li>
-<li>✓ ZO Samurai Support</li>
-<li>✓ Saber Showdown Support (SOON)</li>
-<li>✓ Priority Support</li>
-<li>✓ More Games Supporting Soon</li>
+<li>- Fast Updates</li>
+<li>- ZO Samurai Support</li>
+<li>- Priority Support</li>
+<li>- Always Undetected</li>
+<li>- More Games Supporting Soon</li>
 </ul>
 
-<a href="https://koeru.sellhub.cx/" class="buy-btn">Purchase</a>
+<a href="https://koeru.sellhub.cx/product/Koeru/" class="buy-btn">Purchase</a>
+</div>
+
+<div class="card featured">
+<div class="best-value-badge">BEST VALUE</div>
+<h3>6 Months</h3>
+
+<div class="price-wrap">
+<span class="big-price">$40</span>
+<span class="small-price">/6 months</span>
+</div>
+
+<div class="period">Full Access Subscription</div>
+<span class="bonus-tag">+3 Extra Months FREE (9 months total)</span>
+
+<ul class="features" style="margin-top:20px;">
+<li>- Fast Updates</li>
+<li>- ZO Samurai Support</li>
+<li>- Priority Support</li>
+<li>- Always Undetected</li>
+<li>- More Games Supporting Soon</li>
+</ul>
+
+<a href="https://koeru.sellhub.cx/product/Koeru/" class="buy-btn">Purchase</a>
+</div>
+
+<div class="card">
+<h3>3 Months</h3>
+
+<div class="price-wrap">
+<span class="big-price">$18</span>
+<span class="small-price">/3 months</span>
+</div>
+
+<div class="period">Full Access Subscription</div>
+<span class="bonus-tag">+1 Extra Month FREE (4 months total)</span>
+
+<ul class="features" style="margin-top:20px;">
+<li>- Fast Updates</li>
+<li>- ZO Samurai Support</li>
+<li>- Priority Support</li>
+<li>- Always Undetected</li>
+<li>- More Games Supporting Soon</li>
+</ul>
+
+<a href="https://koeru.sellhub.cx/product/Koeru/" class="buy-btn">Purchase</a>
+</div>
+
 </div>
 </section>
 
